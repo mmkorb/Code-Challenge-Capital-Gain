@@ -1,0 +1,16 @@
+# pyproject.toml
+[project]
+name = "capital-gains-calculator"
+version = "0.1.0"
+requires-python = "==3.12.7"
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.4.1",
+    "typer[all]==0.16.0",
+    "dependency-injector==4.48.1"
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
