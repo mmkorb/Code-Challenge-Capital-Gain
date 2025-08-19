@@ -1,6 +1,6 @@
-# Capital Gains Calculator
+# Capital Gains Calculator (Code Challenge Solved)
 
-This project is a command-line interface (CLI) application that calculates capital gains taxes for a given list of stock market operations, as specified by the provided challenge document. The application processes each line from standard input as an independent simulation and outputs the corresponding tax for each operation as a JSON array to standard output.
+This project is a command-line interface (CLI) application that calculates capital gains taxes for a given list of stock market operations. For the full challenge description, please refer to the [Challenge Document](challenge.md).
 
 ## Features
 
@@ -9,7 +9,7 @@ This project is a command-line interface (CLI) application that calculates capit
 -   Correctly computes the **Weighted Average Cost (WAC)** across multiple buy operations.
 -   Accumulates **losses** from unprofitable sales.
 -   Deducts accumulated losses from future profits before calculating taxes.
--   Correctly applies the **tax exemption rule** for sales with a total value less than or equal to $20,000.00.
+-   Correctly applies the **tax exemption rule** for sales with a total value less than or equal to R$ 20,000.00.
 -   Correctly handles specific edge cases from the specification, such as:
     -   Accumulating losses even on tax-exempt sales.
     -   *Not* using profits from tax-exempt sales to offset accumulated losses.
@@ -62,17 +62,11 @@ The few external libraries were chosen deliberately to solve specific problems a
 ### Installation
 
 1.  **Extract the provided `.zip` file**
-
-2.  **Navigate to the project's root directory**:
-    ```sh
-    cd path/to/capital-gains-py
-    ```
-
+2.  **Navigate to the project's root directory**
 3.  **Create a virtual environment**:
     ```sh
     python -m venv .venv
     ```
-
 4.  **Activate the virtual environment**:
     * On Windows (PowerShell):
         ```powershell
@@ -82,10 +76,8 @@ The few external libraries were chosen deliberately to solve specific problems a
         ```sh
         source .venv/bin/activate
         ```
-
 5.  **Install the project and its dependencies**:
-    This project uses a modern Python packaging approach with `pyproject.toml` for configuration, following current best practices.  
-    Use the following command to install the package in editable mode along with development dependencies (such as `pytest`):  
+    This project uses a modern Python packaging approach with `pyproject.toml` for configuration, following current best practices. Use the following command to install the package in editable mode along with development dependencies (such as `pytest`):
     ```sh
     pip install -e .[dev]
     ```
@@ -99,14 +91,14 @@ The application is a CLI that reads JSON-formatted stock operations from standar
 **1. Manual Input (Pasting)**
 
 Run the application:
-    * On Windows:
-        ```
-        Get-Content path/to/input.txt | python -m capital_gains_calculator
-        ```
-    * On macOS/Linux:
-        ```
-        python -m capital_gains_calculator < path/to/input.txt
-        ```
+* On Windows:
+    ```
+    Get-Content path/to/input.txt | python -m capital_gains_calculator
+    ```
+* On macOS/Linux:
+    ```
+    python -m capital_gains_calculator < path/to/input.txt
+    ```
 
 **2. Tests**
 
